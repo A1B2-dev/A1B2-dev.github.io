@@ -41,7 +41,7 @@
     m.href = url; m.style.display='block';
     setTimeout(function(){ location.replace(url); }, 1200);
   }
-  fetch('config.json', {cache:'no-store'})
+  fetch('config.json?v=' + Date.now(), {cache:'no-store'})
     .then(function(r){ return r.json(); })
     .then(function(cfg){
       if(cfg && cfg.target && /^https?:\/\//.test(cfg.target)){
